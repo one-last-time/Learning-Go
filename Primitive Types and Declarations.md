@@ -82,6 +82,20 @@ const is a way to ensure that a value is immutable.<br>
 const x int64 = 10<br>
 const in Go is very limited. Constants in Go are a way to give names to literals. They can only hold values that the compiler can figure out at compile time.
 
+Constants can be typed or untyped. An untyped constant works exactly like a literal;
+it has no type of its own, but does have a default type that is used when no other type
+can be inferred. A typed constant can only be directly assigned to a variable of that
+type
+
+Here’s what an untyped constant declaration looks like:
+
+const x = 10
+
+*Whether or not to make a constant typed depends on why the constant was declared.
+If you are giving a name to a mathematical constant that could be used with multiple
+numeric types, then keep the constant untyped. In general, leaving a constant unty‐
+ped gives you more flexibility.*
+
 ### Naming Variables and Constants
 Go uses camel case (names like indexCounter or numberTries)when an identifier name consists of multiple words. Go uses the case of the first letter in the
 name of a package-level declaration to determine if the item is accessible outside the package.
